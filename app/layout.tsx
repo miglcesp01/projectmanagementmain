@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { ProjectsProvider } from "@/hooks/use-projects"
 import { TeamMembersProvider } from "@/hooks/use-team-members"
 import { SonnerToastProvider } from "@/components/sonner-toast-provider"
+import './globals.css'
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -28,9 +29,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 }
 
 
-
-import './globals.css'
-
-export const metadata = {
-      generator: 'v0.dev'
-    };
