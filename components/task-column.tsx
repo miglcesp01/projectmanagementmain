@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { SortableContext, useSortable, verticalListSortingStrategy } from "@dnd-kit/sortable"
 import { CSS } from "@dnd-kit/utilities"
 import type { Task } from "@/types/project"
-import TaskCard from "./task-card"
+import TaskCard from "@/components/task-card"
 
 // Placeholder component to reduce duplication
 const DropPlaceholder = () => (

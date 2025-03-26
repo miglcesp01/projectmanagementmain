@@ -3,10 +3,10 @@
 import { useState, useCallback, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { PlusCircle } from "lucide-react"
-import TaskCard from "./task-card"
+import TaskCard from "@/components/task-card"
 import type { Project, Task } from "@/types/project"
 import { useProjects } from "@/hooks/use-projects"
-import TaskDialog from "./task-dialog"
+import TaskDialog from "@/components/task-dialog"
 import { COLUMNS } from "@/constants/app-constants"
 import {
   DndContext,

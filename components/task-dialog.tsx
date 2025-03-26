@@ -19,7 +19,7 @@ import { CalendarIcon, Loader2 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { TASK_STATUSES, TASK_PRIORITIES } from "@/constants/app-constants"
 import { toast } from "sonner"
-import { DeleteConfirmPopover } from "./delete-confirm-popover"
+import { DeleteConfirmPopover } from "@/components/delete-confirm-popover"
 
 interface TaskDialogProps {
   open: boolean

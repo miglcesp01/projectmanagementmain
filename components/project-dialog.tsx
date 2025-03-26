@@ -11,12 +11,12 @@ import { Textarea } from "@/components/ui/textarea"
 import { useProjects } from "@/hooks/use-projects"
 import { v4 as uuidv4 } from "uuid"
 import type { Project } from "@/types/project"
-import TeamMemberSelect from "./team-member-select"
+import TeamMemberSelect from "@/components/team-member-select"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { PROJECT_STATUSES } from "@/constants/app-constants"
 import { toast } from "sonner"
 import { Loader2 } from "lucide-react"
-import { DeleteConfirmPopover } from "./delete-confirm-popover"
+import { DeleteConfirmPopover } from "@/components/delete-confirm-popover"
 
 interface ProjectDialogProps {
   open: boolean

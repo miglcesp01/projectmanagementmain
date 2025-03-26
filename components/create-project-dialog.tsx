@@ -1,6 +1,6 @@
 "use client"
 
-import ProjectDialog from "./project-dialog"
+import ProjectDialog from "@/components/project-dialog"
 
 interface CreateProjectDialogProps {
   open: boolean
