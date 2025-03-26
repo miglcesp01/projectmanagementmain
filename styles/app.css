@@ -1,0 +1,226 @@
+/* Z-index layers */
+.popover-content {
+  z-index: 50;
+}
+
+.dialog-overlay {
+  z-index: 40;
+}
+
+.dialog-content {
+  z-index: 50;
+}
+
+.dropdown-menu-content {
+  z-index: 50;
+}
+
+/* Toast styling */
+.toast-container [data-sonner-toast] {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Toast type indicators - only use colored left borders */
+.toast-container [data-sonner-toast][data-type="success"] {
+  border-left: 4px solid hsl(var(--success));
+}
+
+.toast-container [data-sonner-toast][data-type="error"] {
+  border-left: 4px solid hsl(var(--destructive));
+}
+
+.toast-container [data-sonner-toast][data-type="warning"] {
+  border-left: 4px solid hsl(var(--warning));
+}
+
+.toast-container [data-sonner-toast][data-type="info"] {
+  border-left: 4px solid hsl(var(--primary));
+}
+
+/* Toast text styling */
+.toast-container [data-sonner-toast] [data-title] {
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.toast-container [data-sonner-toast] [data-description] {
+  margin-top: 4px;
+  font-size: 0.875rem;
+  color: hsl(var(--foreground) / 0.8);
+}
+
+/* Style the undo button */
+.toast-container [data-sonner-toast] [data-button] {
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: hsl(var(--primary) / 0.1);
+  color: hsl(var(--primary));
+  transition: background-color 0.2s ease;
+}
+
+.toast-container [data-sonner-toast] [data-button]:hover {
+  background-color: hsl(var(--primary) / 0.2);
+}
+
+/* Fix close button styling */
+.toast-container [data-sonner-toast] [data-close-button] {
+  color: hsl(var(--foreground) / 0.5);
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.toast-container [data-sonner-toast] [data-close-button]:hover {
+  opacity: 1;
+  background: transparent;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Kanban board layout - horizontal scrolling */
+.kanban-board-container {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  -webkit-overflow-scrolling: touch;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.kanban-board {
+  display: flex;
+  flex-direction: row;
+  min-width: min-content;
+  gap: 1rem;
+}
+
+.kanban-column-wrapper {
+  flex: 0 0 280px;
+  min-width: 280px;
+  max-width: 280px;
+}
+
+@media (min-width: 640px) {
+  .kanban-column-wrapper {
+    flex: 0 0 300px;
+    min-width: 300px;
+    max-width: 300px;
+  }
+}
+
+/* Scrollbar styling */
+.kanban-board-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+@media (min-width: 640px) {
+  .kanban-board-container::-webkit-scrollbar {
+    height: 8px;
+  }
+}
+
+.kanban-board-container::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+.kanban-board-container::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+.kanban-board-container::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Task column scrollbar */
+.task-column::-webkit-scrollbar {
+  width: 4px;
+}
+
+@media (min-width: 640px) {
+  .task-column::-webkit-scrollbar {
+    width: 6px;
+  }
+}
+
+.task-column::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.task-column::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.2);
+  border-radius: 3px;
+}
+
+.task-column::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.4);
+}
+
+/* Responsive container adjustments */
+.container {
+  width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Fix for drag cursor */
+.dragging-active {
+  cursor: grabbing !important;
+}
+
