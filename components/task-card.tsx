@@ -60,7 +60,7 @@ export default function TaskCard({ task, onClick, isDragging = false }: TaskCard
     onClick()
   }
 
-  const cardClassName = `cursor-grab hover:shadow-md transition-all min-h-[140px] sm:min-h-[160px] ${
+  const cardClassName = `cursor-grab hover:shadow-md transition-all ${
     isCurrentlyDragging
       ? "shadow-lg border-2 border-primary cursor-grabbing"
       : "border border-border hover:border-primary/30"
@@ -70,7 +70,7 @@ export default function TaskCard({ task, onClick, isDragging = false }: TaskCard
     <div
       ref={setNodeRef}
       style={style}
-      className={`relative transition-all mb-3 last:mb-0 select-none touch-none min-h-[140px] sm:min-h-[160px] ${
+      className={`relative transition-all mb-3 last:mb-0 select-none touch-none ${
         isCurrentlyDragging ? "z-50 opacity-50" : ""
       }`}
       data-task-id={task.id}
@@ -90,8 +90,8 @@ export default function TaskCard({ task, onClick, isDragging = false }: TaskCard
         role="button"
         aria-label={`Edit task: ${task.title}`}
       >
-        <CardContent className="p-3 flex flex-col h-full">
-          <div className="flex-grow space-y-2">
+        <CardContent className="p-3 flex flex-col" style={{ minHeight: "140px" }}>
+          <div className="space-y-2 mb-auto">
             <div className="flex justify-between items-start gap-2">
               <h4 className="font-medium line-clamp-2">{task.title}</h4>
               <Badge variant={getPriorityVariant(task.priority)} className="flex-shrink-0">
@@ -102,7 +102,7 @@ export default function TaskCard({ task, onClick, isDragging = false }: TaskCard
             {task.description && <p className="text-sm text-muted-foreground line-clamp-3">{task.description}</p>}
           </div>
 
-          <div className="mt-auto pt-3 flex justify-between items-center">
+          <div className="flex justify-between items-center mt-2">
             <div className="flex-shrink-0">
               {task.assignee && (
                 <Avatar className="h-6 w-6">
