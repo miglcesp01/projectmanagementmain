@@ -59,7 +59,7 @@ export function ProjectsProvider({ children }: { children: ReactNode }) {
 
   const addProject = (project: Project) => {
     try {
-      const newProjects = [...projects];
+      const newProjects = [...projects, project];
       setProjects(newProjects);
       setActiveProjectState(project);
     } catch (error) {
