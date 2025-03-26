@@ -314,7 +314,7 @@ export default function TaskDialog({ open, onOpenChange, project, task }: TaskDi
               </p>
             )}
           </div>
-          <div className="space-y-2">
+          <div className="space-y-1">
             <Label htmlFor="description">Description</Label>
             <Textarea
               id="description"
@@ -324,8 +324,8 @@ export default function TaskDialog({ open, onOpenChange, project, task }: TaskDi
               rows={3}
             />
           </div>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="space-y-2">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-1">
               <Label htmlFor="status">Status</Label>
               <Select value={status} onValueChange={setStatus}>
                 <SelectTrigger id="status">
@@ -339,7 +339,7 @@ export default function TaskDialog({ open, onOpenChange, project, task }: TaskDi
                 </SelectContent>
               </Select>
             </div>
-            <div className="space-y-2">
+            <div className="space-y-1">
               <Label htmlFor="priority">Priority</Label>
               <Select value={priority} onValueChange={setPriority}>
                 <SelectTrigger id="priority">
@@ -354,7 +354,7 @@ export default function TaskDialog({ open, onOpenChange, project, task }: TaskDi
             </div>
           </div>
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="space-y-2">
+            <div className="space-y-1">
               <Label htmlFor="dueDate" className={errors.dueDate ? "text-destructive" : ""}>
                 Due Date
               </Label>
@@ -397,7 +397,7 @@ export default function TaskDialog({ open, onOpenChange, project, task }: TaskDi
                 </p>
               )}
             </div>
-            <div className="space-y-2">
+            <div className="space-y-1">
               <Label htmlFor="assignee">Assignee</Label>
               <Select value={assigneeId} onValueChange={setAssigneeId}>
                 <SelectTrigger id="assignee">
