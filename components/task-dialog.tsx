@@ -353,7 +353,7 @@ export default function TaskDialog({ open, onOpenChange, project, task }: TaskDi
               </Select>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="dueDate" className={errors.dueDate ? "text-destructive" : ""}>
                 Due Date
