@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { CalendarIcon } from "lucide-react"
@@ -90,31 +90,36 @@ export default function TaskCard({ task, onClick, isDragging = false }: TaskCard
         role="button"
         aria-label={`Edit task: ${task.title}`}
       >
-        <CardContent className="p-3 space-y-2 overflow-hidden">
-          <div className="flex justify-between items-start gap-2">
-            <h4 className="font-medium line-clamp-2">{task.title}</h4>
-            <Badge variant={getPriorityVariant(task.priority)}>
-              {task.priority}
-              <span className="sr-only">Priority: {task.priority}</span>
-            </Badge>
-          </div>
-          {task.description && <p className="text-sm text-muted-foreground line-clamp-3">{task.description}</p>}
-        </CardContent>
-        <CardFooter className="p-3 pt-0 flex justify-between items-center absolute bottom-0 left-0 right-0">
-          {task.assignee && (
-            <Avatar className="h-6 w-6">
-              <AvatarImage src={task.assignee.avatar} alt={`Assigned to ${task.assignee.name}`} />
-              <AvatarFallback>{getInitials(task.assignee.name)}</AvatarFallback>
-            </Avatar>
-          )}
-
-          {dueDate && (
-            <div className={`flex items-center text-xs gap-1 ${getDeadlineColor(dueDate)}`}>
-              <CalendarIcon className="h-3 w-3" />
-              <span>{formatDueDate(dueDate)}</span>
+        <CardContent className="p-3 flex flex-col h-full">
+          <div className="flex-grow space-y-2">
+            <div className="flex justify-between items-start gap-2">
+              <h4 className="font-medium line-clamp-2">{task.title}</h4>
+              <Badge variant={getPriorityVariant(task.priority)} className="flex-shrink-0">
+                {task.priority}
+                <span className="sr-only">Priority: {task.priority}</span>
+              </Badge>
             </div>
-          )}
-        </CardFooter>
+            {task.description && <p className="text-sm text-muted-foreground line-clamp-3">{task.description}</p>}
+          </div>
+
+          <div className="mt-auto pt-3 flex justify-between items-center">
+            <div className="flex-shrink-0">
+              {task.assignee && (
+                <Avatar className="h-6 w-6">
+                  <AvatarImage src={task.assignee.avatar} alt={`Assigned to ${task.assignee.name}`} />
+                  <AvatarFallback>{getInitials(task.assignee.name)}</AvatarFallback>
+                </Avatar>
+              )}
+            </div>
+
+            {dueDate && (
+              <div className={`flex items-center text-xs gap-1 ${getDeadlineColor(dueDate)}`}>
+                <CalendarIcon className="h-3 w-3" />
+                <span>{formatDueDate(dueDate)}</span>
+              </div>
+            )}
+          </div>
+        </CardContent>
       </Card>
     </div>
   )
