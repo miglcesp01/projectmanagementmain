@@ -19,7 +19,7 @@ const TeamMembersContext = createContext<TeamMembersContextType | undefined>(und
 
 export function TeamMembersProvider({ children }: { children: ReactNode }) {
   const [teamMembers, setTeamMembersStorage, clearTeamMembersStorage] = useLocalStorage<TeamMember[]>(
-    LOCAL_STORAGE_KEYS.TEAM_MEMBERS,
+    LOCAL_STORAGE_KEYS.TEAM_MEMBERS, 
     [],
   )
 
